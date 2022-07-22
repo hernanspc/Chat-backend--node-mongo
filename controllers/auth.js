@@ -47,7 +47,6 @@ const crearUsuario = async (req, res = response) => {
     }
 }
 
-
 //Login
 const login = async (req, res = response) => {
 
@@ -92,9 +91,12 @@ const login = async (req, res = response) => {
 }
 
 const renewToken = async (req, res = response) => {
+
+    const uid = req.uid;
+
     res.json({
         ok: true,
-        usuario: "renew"
+        uid
     })
 }
 
