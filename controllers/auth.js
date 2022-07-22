@@ -24,7 +24,6 @@ const login = async (req, res = response) => {
 
     const { email, password } = req.body;
     // const body = req.body;
-
     res.json({
         ok: true,
         usuario: "login",

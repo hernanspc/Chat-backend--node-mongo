@@ -13,7 +13,8 @@ router.post('/new', crearUsuario)
 
 // Login
 router.post('/', [
-    check('email', 'El email es obligatorio').isEmail()
+    check('email', 'El email es obligatorio').isEmail(),
+    check('password', 'El password es obligatorio').not().isEmpty(),
 ], login)
 
 // Revalidar Token
