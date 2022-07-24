@@ -45,7 +45,8 @@ class Sockets {
 
             //TODO: Emitir los usuarios conectados
             socket.on('disconnect', async () => {
-                await usuarioDesconectado(uid)
+                await usuarioDesconectado(uid);
+                this.io.emit('lista-usuarios', await getUsuarios());
                 console.log('cliente desconectado ', uid)
             })
 
