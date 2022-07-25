@@ -44,7 +44,9 @@ class Sockets {
             //TODO: Escuchar cuando el cliente manda un mensaje
             socket.on('mensaje-personal', async (payload) => {
                 const mensaje = await grabarMensaje(payload);
-                console.log(mensaje);
+                this.io.to(payload.para).emit('mensaje-personal', mensaje);
+                this.io.to(payload.de).emit('mensaje-personal', mensaje);
+
             })
             //mensaje-personal
 
